@@ -1,0 +1,61 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="panel panel-primary">
+                <div class="panel panel-heading"><h3>Elenco Prodotti</h3></div>
+                <div class="panel-body">
+         <table class="table table-hover" >
+             <thead>
+              <tr>
+                 <th>ID</th><th>Designazione</th><th>Quantità</th><th>Prezzo unit</th>
+                  <th><button class="btn btn-primary" (clik)="initProduit()">AGGIUNGI</button></th>
+              </tr>
+             </thead>
+             <tbody>
+               <tr *ngFor="let produit of produits"> 
+                <td>{{produit.id}}</td>
+                <td>{{produit.ref}}</td>
+                <td>{{produit.quantite}}</td>
+                <td>{{produit.prixUnutaire}}</td>
+            <button (click)="edit(); selectedProduit= produit" class="btn btn-info" >Modifica</button>
+            <button (click)="delete(produit) " class="btn btn-danger" >Cancella</button>
+               </tr>
+             </tbody>
+         </table>
+        </div>
+        </div>
+        </div>
+        <div class="col-md-5">
+         <div class="panel panel-primary">
+              <div class="panel-heading"><h3>Aggiungere Prodotti</h3></div>
+              <div class="panel-body">
+                  <form #f="ngForm" (ngSubmit)="addProduit(f.value)">
+                    <div class="form-group">
+                       <div class="form-group">
+                         <label class="control-label">Designazione:</label>
+                         <input type="text" class="form-control" name="ref" [(ngModel)]="selectedProduit.ref">
+                       </div>
+                       <div class="alert alert-danger">
+                           è obbligatorio inserire la designazione!!!!!
+                       </div>
+                       <div class="form-group">
+                        <label class="control-label">Quant:</label>
+                        <input type="number" class="form-control" name="quantite" [(ngModel)]="selectedProduit.quantite">
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label">Prezzo unit:</label>
+                        <input type="number" class="form-control" name="prixUnutaire" [(ngModel)]="selectedProduit.prixUnutaire">
+                      </div>
+                      <button type="submit" class="btn btn-success">Aggiungere</button>
+                    </div>
+                  </form>
+              </div>
+         
+          </div>
+          
+        </div>
+
+    </div>
+
+</div>
