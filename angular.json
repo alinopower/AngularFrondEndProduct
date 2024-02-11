@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "AngularFrondEndEmployee": {
@@ -28,13 +28,12 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/font-awesome/css/font-awesome.css"
-              
             ],
-            "scripts": ["node_modules/jquery/dist/jquery.min.js",
-                        "node_modules/bootstrap/dist/js/bootstrap.min.js",
-                        "node_modules/popper.js/dist/umd/popper.min.js"
-                        
-                        ]
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -70,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "AngularFrondEndEmployee:build"
+            "buildTarget": "AngularFrondEndEmployee:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "AngularFrondEndEmployee:build:production"
+              "buildTarget": "AngularFrondEndEmployee:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "AngularFrondEndEmployee:build"
+            "buildTarget": "AngularFrondEndEmployee:build"
           }
         },
         "test": {
@@ -127,6 +126,9 @@
           }
         }
       }
-    }},
-  "defaultProject": "AngularFrondEndEmployee"
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
 }
